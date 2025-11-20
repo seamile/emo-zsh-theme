@@ -9,7 +9,7 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="]%{$reset_color%}"
 # Format for git_prompt_status()
 ZSH_THEME_GIT_PROMPT_ADDED="%{$fg_bold[green]%}✚  "
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg_bold[green]%}⤒  "
-ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg_bold[green]%}⤓  "
+ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg_bold[yellow]%}⤓  "
 ZSH_THEME_GIT_PROMPT_DELETED="%{$fg_bold[red]%}✘  "
 ZSH_THEME_GIT_PROMPT_DIVERGED="%{$fg_bold[yellow]%}ᚶ  "
 ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg_bold[red]%}⚫︎ "
@@ -86,10 +86,11 @@ function get_right_prompt() {
     fi
 }
 
-local chars=("⛵️" "🐶" "🦊" "🐹" "🐯" "🦁" "🐧" "🐣" "🐝" "🦄" "🐛" "🐌" "🐞"
-             "🐢" "🐍" "🐙" "🐡" "🐠" "🐳" "🍀" "🌹" "🍄" "🐚" "🪐" "🔥" "🌈"
-             "✨" "⚡️" "⛄️" "🍎" "🍉" "🍓" "🍑" "🥝" "🍖" "🍭" "🍯" "🍺" "🍌"
-             "🍐" "⚽️" "🏀" "🎾" "🏓" "🥁" "🎯" "🎲" "🚀" "🦢" "🧨" "💰" "🐱")
+local chars=("⛵️" "🐶" "🦊" "🐹" "🐯" "🦁" "🐧" "🐣" "🐝" "🦄"
+             "🐢" "🐍" "🐙" "🐡" "🐠" "🐳" "🍀" "🌹" "🍄" "🐚"
+             "✨" "⚡️" "⛄️" "🍎" "🍉" "🍓" "🍑" "🥝" "🍖" "🍭"
+             "🍐" "⚽️" "🏀" "🎾" "🏓" "🥁" "🎯" "🎲" "🚀" "🐁"
+             "🐛" "🐌" "🐞" "🔥" "🌈" "🐱" "🍯" "🍺" "🍌" "💰")
 local selected="${chars[RANDOM % ${#chars[@]} + 1]}"
 local SYMBOL="%(?,%{$fg_bold[blue]%}${selected},%{$fg_bold[red]%}✘)"
 
