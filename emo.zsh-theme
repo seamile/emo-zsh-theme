@@ -104,13 +104,13 @@ fi
 # join the PROMPT
 if [ -n "$SSH_CLIENT"  ]; then
     # show user and host on remote-host
-    local PREFIX="$SYMBOL $_USER%{$fg_no_bold[blue]%}@%{$fg_bold[blue]%}%m"  # μ user@host
+    local EMO_PREFIX="$SYMBOL $_USER%{$fg_no_bold[blue]%}@%{$fg_bold[blue]%}%m"  # μ user@host
 else
     # show user only on local-host
-    local PREFIX="$SYMBOL $_USER"  # μ user
+    local EMO_PREFIX="$SYMBOL $_USER"  # μ user
 fi
 
-PROMPT=$PREFIX' \
+PROMPT=$EMO_PREFIX' \
 %{$fg_no_bold[blue]%}[%3~] \
 $(system_info)\
 $(check_git_prompt_info)\
