@@ -110,10 +110,6 @@ else
     local EMO_PREFIX="$SYMBOL $_USER"  # μ user
 fi
 
-PROMPT=$EMO_PREFIX' \
-%{$fg_no_bold[blue]%}[%3~] \
-$(system_info)\
-$(check_git_prompt_info)\
-%{$reset_color%} '
+PROMPT=$EMO_PREFIX' %{$fg_no_bold[blue]%}[%3~] $(system_info)$(check_git_prompt_info)%{$reset_color%} '
 
 RPROMPT='$(get_right_prompt)'
